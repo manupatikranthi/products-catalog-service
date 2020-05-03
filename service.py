@@ -11,7 +11,10 @@ products = json.load(json_file)
 
 @app.route('/')
 def get_products():
-    return str(products)
+    return jsonify({
+    "success": True,
+    "data": products
+    })
 
 if __name__ == "__main__":
     app.run()
